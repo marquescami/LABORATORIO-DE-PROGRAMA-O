@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int somar (int a, int b){
+
+	int result;
+	result = a + b;
+	return result;	
+}
+
+int main() {
+	
+		int n1, n2, result;
+	
+		printf ("Informe dois numeros: \n");
+		scanf ("%d %d", &n1, &n2);
+	
+		result = somar (n1, n2);
+		printf ("O resultado %d", result); 
+	
+	return 0;
+}
