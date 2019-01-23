@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float multiplica (float a, float b);
+float soma (float a, float b);
+
+int main() {
+	
+		float n1, n2, n3, n4, resultsoma, resultmulti1, resultmulti2;
+	
+		printf ("Informe quatro numeros: \n");
+		scanf ("%f %f %f %f", &n1, &n2, &n3, &n4);
+	
+		resultmulti1 = multiplica (n1, n2);
+		resultmulti2 = multiplica (n3, n4);
+		
+		
+
+		resultsoma = soma (resultmulti1, resultmulti2);
+		printf ("O resultado da soma %.2f", resultsoma);
+		
+		
+		return 0;
+}
+
+
+
+float multiplica (float a, float b){
+
+
+	float result = a * b;
+	return result;	
+}
+
+float soma (float a, float b){
+
+	float result = a + b;
+	
+		return result;	
+}
