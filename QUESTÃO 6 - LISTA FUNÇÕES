@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct {
+ 	
+	 char l1, l2, l3;
+ 
+} Letras;
+
+
+Letras ler3Letras (){
+	
+	Letras leitura;
+
+	printf ("Informe 3 letras \n");
+	scanf ("%c %c %c", &leitura.l1, &leitura.l2, &leitura.l3);
+	
+
+
+	return leitura;
+	
+}
+
+main (){
+	
+Letras result;
+
+result = ler3Letras ( );
+printf ("As letras digitadas foram: %c  %c  %c", result.l1, result.l2, result.l3);
+
+}
+
