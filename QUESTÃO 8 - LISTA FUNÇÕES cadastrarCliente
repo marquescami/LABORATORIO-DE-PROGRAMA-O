@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct {
+	
+	char nome[31], nascimento[11], cpf [11], sexo[2]; 
+	
+} Dados;
+
+Dados cadastrarCliente(){
+	
+	Dados ficha;
+	
+	printf("Nome:\n ");
+    gets(ficha.nome);
+ 
+    printf("Data de nascimento: \n ");
+    gets(ficha.nascimento);	
+    
+    printf("CPF: \n");
+    gets(ficha.cpf);
+    
+	printf("Sexo M - masculino e F - feminino: \n");
+    gets(ficha.sexo);
+	
+	
+	return ficha;
+}
+
+	int main(){
+	
+	Dados ficha; 
+	
+	ficha = cadastrarCliente();
+	
+	printf("___________________________________CADASTRO CLIENTE___________________________________");
+	printf("\nNome completo: %s \n", ficha.nome);
+    printf("Data de nascimento: "); puts(ficha.nascimento);
+    printf("CPF: "); puts(ficha.cpf);
+    printf("Sexo: "); puts(ficha.sexo);
+    printf("_______________________________________________________________________________________");
+	 
+}
