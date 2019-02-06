@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int calculo (int a, int b, int *p, int *q);
+void trocaValores(int *x, int *y);
+
+int main()
+{
+    int a, b, c;
+    int *p;
+    int *q;
+
+
+    printf("Informe dois valores: \n");
+    scanf("%d %d", &a, &b);
+
+     c = calculo (a, b, &p, &q);
+
+     printf("O valor de C eh %d \n", c);
+    printf("A e B antes\n");
+    printf("Valor de a: %d \n", a);
+    printf("Valor de b: %d\n", b);
+
+     trocaValores(&a, &b);
+
+    printf("A e B depois\n");
+    printf("Valor de a: %d \n", a);
+    printf("Valor  de b: %d\n", b);
+
+
+return 0;
+}
+int calculo (int a, int b, int *p, int *q){
+    int c;
+
+    p = &a;
+    q = &b;
+    c = *p + *q;
+
+  return c;
+}
+
+void trocaValores(int *x, int *y){
+    //trocar x por y
+    int aux;
+
+    aux = *x;
+    *x = *y;
+    *y = aux;
+
+}
+
+
+
+
+
