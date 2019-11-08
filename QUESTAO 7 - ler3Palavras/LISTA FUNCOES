@@ -1,0 +1,35 @@
+  
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct {
+ 	
+	 char palavra_1[10], palavra_2[10], palavra_3[10];
+	 
+ 
+} Palavras;
+
+
+
+Palavras ler3Palavras (){
+	
+	Palavras leitura;
+
+	printf ("Informe 3 palavras:  \n");
+	scanf ("%s %s %s", &leitura.palavra_1, &leitura.palavra_2, &leitura.palavra_3);
+	
+
+
+	return leitura;
+	
+}
+
+main (){
+	
+Palavras result;
+
+result = ler3Palavras ();
+printf ("As palavras digitadas foram:\n %s \n  %s \n %s \n", result.palavra_1, result.palavra_2, result.palavra_3);
+
+}
