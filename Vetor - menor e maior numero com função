@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void armazena_vetor(int numeros[]);
+int maiorNumero (int numeros[]);
+int menorNumero (int numeros[]);
+void ImprimeMenoreMaior(int maior, int menor);
+
+int main (){
+
+int numeros[10];
+ armazena_vetor(numeros);
+  int maior = maiorNumero(numeros);
+int menor = menorNumero (numeros);
+ImprimeMenoreMaior(maior, menor);
+}
+
+void armazena_vetor(int numeros[]){
+
+int i;
+
+for (i=0; i<10; i++)
+{
+printf("Informe um numero: \n");
+scanf("%d", &numeros[i]);
+}
+
+}
+
+
+int maiorNumero (int numeros[]){
+
+int maior, i=0;
+
+maior=numeros[i];
+for(i=0; i<10; i++)
+if (numeros[i]>maior){
+maior = numeros[i];
+
+}
+
+return maior;
+
+}
+
+
+int menorNumero (int numeros[]){
+
+int menor, i=0;
+
+menor=numeros[i];
+for(i=0; i<10; i++)
+if (numeros[i]<menor){
+menor = numeros[i];
+
+}
+
+return menor;
+
+}
+
+void ImprimeMenoreMaior(int maior, int menor)
+{
+
+printf("O menor numero apresentado: %d \n", menor);
+printf("O maior numero apresentado: %d \n", maior);
+
+}
