@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int caracteresDigitados(char texto[]);
+
+
+int main (){
+	
+	char texto[100];
+	
+	printf ("Informe o texto:\n");
+	gets (texto);
+	
+	int i = caracteresDigitados(texto);
+	printf ("Quantidade de caracteres digitados: %d", i);
+	
+}
+
+int caracteresDigitados(char texto[]){
+	
+	int i;
+	for (i=0; texto[i] != '\0'; i++);
+	
+	return i;	
+}
