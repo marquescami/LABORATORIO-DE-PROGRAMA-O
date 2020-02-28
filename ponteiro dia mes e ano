@@ -19,7 +19,8 @@ int main(){
 	Data *ptrData = &dia_mes_ano; // *ptrData é um ponteiro do tipo data que recebe o endereco de dia_mes_ano
 	
 	solicitaData (ptrData);	
-	printf("Data digitada %d/%d/%d", dia_mes_ano.dia, dia_mes_ano.mes, dia_mes_ano.ano);  		
+	printf("Data digitada %d/%d/%d \n", dia_mes_ano.dia, dia_mes_ano.mes, dia_mes_ano.ano);  		
+	printf("Data digitada %d/%d/%d", ptrData->dia, ptrData->mes, ptrData->ano);  		
 	
 }
 
@@ -37,4 +38,3 @@ void solicitaData (Data *ptrData){
 	
 }
 
-	
