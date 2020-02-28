@@ -1,0 +1,40 @@
+#include <stdio.h>
+# include<string.h>
+
+
+// ponteiro para dia mes e ano
+
+typedef struct data{
+	short dia;
+	short mes;
+	int ano;
+	
+} Data;
+
+void solicitaData (Data *ptrData);
+
+int main(){
+	
+	Data dia_mes_ano; 	
+	Data *ptrData = &dia_mes_ano; // *ptrData é um ponteiro do tipo data que recebe o endereco de dia_mes_ano
+	
+	solicitaData (ptrData);	
+	printf("Data digitada %d/%d/%d", dia_mes_ano.dia, dia_mes_ano.mes, dia_mes_ano.ano);  		
+	
+}
+
+void solicitaData (Data *ptrData){
+	
+	printf("Informe o dia: \n ");
+	scanf("%d",&ptrData->dia);
+	
+	printf("Informe o mes: \n");
+	scanf("%d", &ptrData->mes);
+	
+	printf("Informe o ano: \n");
+	scanf("%d",&ptrData->ano);	
+	
+	
+}
+
+	
