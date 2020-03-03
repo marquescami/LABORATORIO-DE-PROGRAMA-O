@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAM 10
+
+typedef struct{
+	int topo;
+	int item[TAM];
+		
+}TPilha;
+
+
+void Pilha_inicio(TPilha *p){
+	p->topo = -1;
+}
+
+int Pilha_Vazia (TPilha *p){
+	if (p->topo == -1){
+		return 1; // pilha vazia
+	}
+		else
+			return 0;		
+}
+
+
+int Pilha_Cheia (TPilha *p){
+	if (p->topo == TAM-1){
+		return 1; // pilha cheia
+	}
+		else
+			return 0;		
+}
+
+void Pilha_Insere (TPilha *p, int x) {
+	if (Pilha_Cheia(p)== 1){
+		printf("\nErro pilha cheia\n");
+	}
+		else {
+			p-> topo++;
+			p-> item[p->topo]=x;
+			
+		}
+}
+
+int Pilha_remove(TPilha *p){
+	int aux;
+	if(Pilha_Vazia(p) == 1){
+		printf("ERRO: Pilha vazia\n");
+		}
+		else{
+			aux = p-> item [p->topo];
+			p-> topo--;
+			return aux;
+			}
+
+}
+
+int main(){
+	
+	TPilha *p = (TPilha*)malloc (sizeof(TPilha));
+	Pilha_inicio(p);
+	
+	Pilha_Insere(p,1);
+	Pilha_Insere(p,2);
+	
+	
+	int aux = Pilha_remove(p);
+	printf("SAIU: %d ", aux);
+	
+	}
+
+
+
+	
+	
+	
+
+ 
