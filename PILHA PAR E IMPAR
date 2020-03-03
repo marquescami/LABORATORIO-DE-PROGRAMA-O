@@ -1,0 +1,165 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAM 10
+
+typedef struct{
+	int topo;
+	int item[TAM];
+}TPilha;
+
+
+void Pilha_inicio(TPilha *p){
+	p->topo = -1;
+}
+
+int Pilha_Vazia (TPilha *p){
+	if (p->topo == -1){
+		return 1; // pilha vazia
+	}
+		else
+			return 0;		
+}
+
+
+int Pilha_Cheia (TPilha *p){
+	if (p->topo == TAM-1){
+		return 1; // pilha cheia
+	}
+		else
+			return 0;		
+}
+
+void Pilha_Insere (TPilha *p, int x) {
+	if (Pilha_Cheia(p)== 1){
+		printf("\nErro pilha cheia\n");
+	}
+		else if (x){
+			p-> topo++;
+			p-> item[p->topo]=x;
+			
+		}
+}
+
+int Pilha_remove(TPilha *p){
+	int aux;
+	if(Pilha_Vazia(p) == 1){
+		printf("ERRO: Pilha vazia\n");
+		}
+		else{
+			aux = p-> item [p->topo];
+			p-> topo--;
+			return aux;
+			}
+
+}
+
+void Listar(TPilha *p){
+	for (int i=0; i<= p->topo; i++){
+		printf("%d", p->item[i]); 
+	}
+	
+}
+
+ int menu (){
+ 	
+ 	int opcao;
+ 	
+ 	printf("\n--------------------------------");
+ 	printf("\nMenu\n");
+ 	printf("--------------------------------");
+ 	printf("\nTecle 1: Inserir item \n ");
+ 	printf("\nTecle 2: Listar par \n ");
+ 	printf("\nTecle 3: Listar impar \n ");
+ 	printf("\nTecle 4: Remover par: \n ");
+ 	printf("\nTecle 5: Remover impar: \n ");
+ 	printf("\nTecle 6: Sair item: \n ");
+ 	printf("\n--------------------------------\n");
+ 	scanf ("%d", &opcao);	
+ 	system("cls");
+ 		return opcao;
+ 		
+ 	
+ }
+int main(){
+	
+	int opcao, x;
+	TPilha *par = (TPilha*)malloc (sizeof(TPilha));
+	TPilha *impar = (TPilha*)malloc (sizeof(TPilha));
+	
+	Pilha_inicio(par);
+	Pilha_inicio(impar);
+	
+	
+	while (opcao != 6 ){
+		opcao = menu ();
+		switch(opcao){
+			
+				case 1:{
+				//inserir item
+				printf("Informe numero para inclusao: \n");
+				scanf ("%d", &x);
+				
+				if (x%2 == 0){
+					Pilha_Insere (par, x);
+					
+				} else{
+					Pilha_Insere (impar,x);
+				}
+				
+				break;
+			}
+			
+			case 2:{
+				// listar pilha par
+				if(!Pilha_Vazia (par)){
+					
+					Listar(par);
+				}
+				
+				
+				break;
+			}
+			
+		case 3:{
+			//listar impar
+				if(!Pilha_Vazia (impar)){
+					
+					Listar(impar);
+				}
+						
+			break;
+		}	
+		
+		case 4:{
+			//remover item par
+			
+			int auxiliar = Pilha_remove(par);
+			printf(" SAIU: %d", auxiliar);
+			
+			break;
+		}
+		
+		case 5:{
+			//remover item impar
+			int auxiliar = Pilha_remove(impar);
+			printf(" SAIU: %d", auxiliar);
+			
+			break;
+		}
+			
+	default :{
+				printf("opcao invalida \n");
+				break;
+			}
+			
+	}
+	
+}
+
+}
+
+	
+	
+	
+
+ 
